@@ -32,18 +32,22 @@ class BookDetailsSection extends StatelessWidget {
         ),
         const SizedBox(height: 4),
 
-        Text(
-          bookModel.volumeInfo?.authors?.toString() ?? '',
-          style: Styles.textStyle18.copyWith(color: Color(0xFFB7B6BC)),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Text(
+            bookModel.volumeInfo?.authors?.toString() ?? '',
+            textAlign: TextAlign.center,
+            style: Styles.textStyle18.copyWith(color: Color(0xFFB7B6BC)),
+          ),
         ),
         const SizedBox(height: 14),
 
         const BookRating(),
         const SizedBox(height: 39),
 
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 30),
-          child: BooksAction(),
+          child: BooksAction(bookModel: bookModel),
         ),
       ],
     );
